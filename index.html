@@ -354,20 +354,6 @@
         </div>
     </section>
 
-    <!-- Discount Code Section (NEW) -->
-    <section id="discount" class="bg-[#1e1e1e] py-16 md:py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#00ff00] mb-8 font-mono">&gt; Have a Discount Code?</h2>
-            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 max-w-xl mx-auto">
-                <input type="text" id="voucher-code-input" placeholder="Enter your code here" class="w-full md:w-2/3 p-3 rounded-lg border-2 border-[#00ff00] bg-gray-900 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00cc00]">
-                <button id="apply-voucher-btn" class="w-full md:w-1/3 bg-[#00ff00] text-gray-900 font-bold py-3 rounded-lg hover:bg-[#00cc00] transition duration-300 glow-button">
-                    Apply Code
-                </button>
-            </div>
-            <p id="voucher-message" class="mt-4 text-center"></p>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
     <section id="testimonials" class="bg-[#1a1a1a] py-16 md:py-24">
         <div class="container mx-auto px-6 text-center">
@@ -619,27 +605,6 @@
             });
             backToTopBtn.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // --- DISCOUNT VOUCHER LOGIC (NEW) ---
-            const voucherInput = document.getElementById('voucher-code-input');
-            const applyVoucherBtn = document.getElementById('apply-voucher-btn');
-            const voucherMessage = document.getElementById('voucher-message');
-            
-            const validVoucherCode = 'NEWHORIZONS'; // This is the hardcoded voucher code.
-            
-            applyVoucherBtn.addEventListener('click', () => {
-                const enteredCode = voucherInput.value.toUpperCase().trim();
-                
-                if (enteredCode === validVoucherCode) {
-                    voucherMessage.textContent = 'Success! Discount code applied. This would be processed at checkout.';
-                    voucherMessage.className = 'mt-4 text-center text-[#00ff00] font-bold';
-                    voucherInput.disabled = true;
-                    applyVoucherBtn.disabled = true;
-                } else {
-                    voucherMessage.textContent = 'Invalid code. Please try again.';
-                    voucherMessage.className = 'mt-4 text-center text-red-500 font-bold';
-                }
             });
         });
     </script>
